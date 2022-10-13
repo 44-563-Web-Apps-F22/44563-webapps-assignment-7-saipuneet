@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest10" onclick="check(10)"></div>
             <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest11" onclick="check(11)"></div>
-            <div class="col-sm-2"><img src="help.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest12" onclick="check(12)"></div>
+            <div class="col-sm-2"><img src="help.jpg" alt="chest" class="img-fluid" height="100" width="100" id="help" onclick="help()"></div>
             <div class="col-sm-2"><img src="treasure chest.jpg " alt="chest" class="img-fluid" height="100" width="100" id="chest13" onclick="check(13)"></div>
             <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest14" onclick="check(14)"></div>
         </div>
@@ -81,23 +81,23 @@
     let chestCount = 0
     let score = 0
     let lastCheck = 12
-    let treasureLocation = Math.floor(Math.random() * 24)
+    let treasureLocation = 18
 
     function check(position) {
-        image = document.getElementById(ids[position])
-        if(position == treasureLocation) {
-            image.src = "treasure.jpg"
-        } else {
-            image.src = "treasure empty.jpg" 
-        }
-        chestCount += 1
-        score += 1 
-        document.getElementById("chests").innerHTML = "Number of chests checked is " +chestCount;
-        document.getElementById("score").innerHTML = "Score is " + score
-        lastCheck = position;
-    }
+      image = document.getElementById(ids[position])
+      if(position == treasureLocation) {
+          image.src = "treasure.jpg"
+      } else {
+          image.src = "empty_chest.jpg"
+      }
+      chestCount += 1
+      score += 1 
+      document.getElementById("chests").innerHTML = "Number of chests checked is " +chestCount;
+      document.getElementById("score").innerHTML = "Score is " + score
+      lastCheck = position;
+  }
 
-    function help() {
+  function help() {
       lastCheck_row = parseInt(lastCheck / 5)
       lastCheck_column = parseInt(lastCheck % 5)
       treasureLocation_row = parseInt(treasureLocation / 5)
