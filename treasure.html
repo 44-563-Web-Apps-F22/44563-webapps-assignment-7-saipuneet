@@ -34,7 +34,7 @@
         <button class="btn btn-success" type="submit" onclick="resetGame()">Reset</button>
     </div>
 <br>
-
+<div class="container">
     <div class="row">
         <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest0" onclick="check(0)"></div>
         <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest1" onclick="check(1)"></div>
@@ -70,7 +70,7 @@
             <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest23" onclick="check(23)"></div>
             <div class="col-sm-2"><img src="treasure chest.jpg" alt="chest" class="img-fluid" height="100" width="100" id="chest24" onclick="check(24)"></div>
         </div>
-
+    </div>
 <!-- 4-->
 
 
@@ -88,7 +88,7 @@
       if(position == treasureLocation) {
           image.src = "treasure.jpg"
       } else {
-          image.src = "empty_chest.jpg"
+          image.src =  "treasure empty.jpg"
       }
       chestCount += 1
       score += 1 
